@@ -1,14 +1,21 @@
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import * as dat from 'dat.gui';
-import space from '../src/8769.jpg' 
-import prototypeGrid from '../src/Prototype_Grid.png'
+import * as THREE from '../node_modules/three/build/three.js'
+import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js'
+import * as dat from '../node_modules/dat.gui/build/dat.gui.js';
 let camera, orbitControls,scene, renderer;
 let directionalLight1,spotLight, ambientLight; 
 let showCube = false, showSphere = false, showMultiMesh = true;
 const threejsCanvas = document.querySelector('#threejs-canvas');
 const mouse = new THREE.Vector2(1, 1);
 const raycaster = new THREE.Raycaster();
+const space = new URL(
+    '../src/8769.jpg?as=jpg&width=3840&height=3840',
+    import.meta.url );
+const prototypeGrid = new URL(
+    '../src/Prototype_Grid.png?as=png&width=250',
+    import.meta.url
+);
+
+
 let mesh;
 const objects = [];
 const amount = parseInt(window.location.search.slice(1)) || 10;
@@ -21,8 +28,8 @@ animate();
 
 function initialize() {
     //Create a scene...
-    let width = threejsCanvas.width;
-    let height = threejsCanvas.height;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
     scene = new THREE.Scene(); 
     //scene.fog = new THREE.Fog(0XFFFFF, 0, 150);
     scene.fog = new THREE.FogExp2(0xFFFFFF, 0.01);
