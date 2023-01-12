@@ -838,7 +838,7 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
 }
 
-},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls":"7mqRv","dat.gui":"k3xQk","../src/8769.jpg":"j4n7V","@parcel/transformer-js/src/esmodule-helpers.js":"d2xMn","../src/Prototype_Grid.png":"kXnib"}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls":"7mqRv","dat.gui":"k3xQk","../src/8769.jpg":"j4n7V","../src/Prototype_Grid.png":"kXnib","@parcel/transformer-js/src/esmodule-helpers.js":"d2xMn"}],"ktPTu":[function(require,module,exports) {
 /**
  * @license
  * Copyright 2010-2022 Three.js Authors
